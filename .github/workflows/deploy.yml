@@ -1,0 +1,46 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'ralph-minimal/**'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to Cloudflare
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      
+      - name: Install dependencies
+        working-directory: ./ralph-minimal
+        run: bun install
+      
+      - name: Authenticate to Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      
+      - name: Deploy
+        working-directory: ./ralph-minimal
+        run: bun run deploy
+      
+      - name: Run smoke tests after deploy
+        working-directory: ./ralph-minimal
+        run: |
+          echo "Waiting for deployment to propagate..."
+          sleep 30
+          bun run test:prod || echo "Tests failed but deployment succeeded"

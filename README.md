@@ -2,6 +2,9 @@
 
 **Run opencode agents indefinitely on Cloudflare. Deploy in 5 minutes. ~$15/month. 300 lines of code.**
 
+[![Test](https://github.com/acoyfellow/ralph-complete/actions/workflows/test.yml/badge.svg)](https://github.com/acoyfellow/ralph-complete/actions/workflows/test.yml)
+[![Deploy](https://github.com/acoyfellow/ralph-complete/actions/workflows/deploy.yml/badge.svg)](https://github.com/acoyfellow/ralph-complete/actions/workflows/deploy.yml)
+
 🌐 **Live Demo:** https://ralph-complete.coy.workers.dev
 
 Ralph runs opencode agents on your repos 24/7 to automate revenue generation. Control it from anywhere via web UI or API.
@@ -87,11 +90,32 @@ curl https://ralph.workers.dev/api/remote    # Get SSH URL
 
 ## Testing
 
+### Production Smoke Tests
+
 Run production smoke tests:
 
 ```bash
+cd ralph-minimal
 bun run test:prod
 ```
+
+### End-to-End Test
+
+Run complete end-to-end verification:
+
+```bash
+./test-e2e.sh
+```
+
+### Automated Testing
+
+GitHub Actions automatically:
+- ✅ Run production smoke tests on every push/PR
+- ✅ Run daily health checks (2am UTC)
+- ✅ Verify builds and type checking
+- ✅ Deploy on main branch changes
+
+View test status: [Actions](https://github.com/acoyfellow/ralph-complete/actions)
 
 ## Documentation
 
