@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "iteration": {
+    "maxFilesChanged": 12,
+    "maxLinesChanged": 400
+  },
+  "scope": {
+    "allowPaths": [
+      "ralph-minimal/src/",
+      "ralph-minimal/server.js",
+      "ralph-minimal/Dockerfile",
+      "scripts/",
+      "README.md",
+      "AGENTS.md",
+      "scripts/ralph/",
+      ".github/workflows/",
+      ".opencode/"
+    ],
+    "denyPaths": []
+  },
+  "dependencies": {
+    "allowDependencyChanges": false
+  }
+}

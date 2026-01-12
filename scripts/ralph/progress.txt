@@ -1,0 +1,11 @@
+# Progress / Learnings
+
+## Commands
+- typecheck: cd ralph-minimal && bun run build
+- test: cd ralph-minimal && bun run test:prod
+
+## Conventions
+- Small commits
+- One story per run
+- Never push failing tests
+- Keep changes in ralph-minimal/ directory
