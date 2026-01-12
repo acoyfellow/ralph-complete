@@ -4,7 +4,8 @@ import { RalphContainer } from './container';
 export { Ralph, RalphContainer };
 
 interface Env {
-  RALPH: DurableObjectNamespace;
+  RALPH: DurableObjectNamespace<Ralph>;
+  CONTAINER: DurableObjectNamespace<RalphContainer>;
 }
 
 export default {
@@ -17,8 +18,8 @@ export default {
       const action = url.pathname.slice(5);
       
       if (action === 'start') {
-        const { repo, prompt } = await req.json();
-        return Response.json(await ralph.start(repo, prompt));
+        const body = await req.json() as { repo: string; prompt: string };
+        return Response.json(await ralph.start(body.repo, body.prompt));
       }
       
       if (action === 'pause') {
@@ -30,8 +31,8 @@ export default {
       }
       
       if (action === 'steer') {
-        const { command } = await req.json();
-        return Response.json(await ralph.steer(command));
+        const body = await req.json() as { command: string };
+        return Response.json(await ralph.steer(body.command));
       }
       
       if (action === 'status') {

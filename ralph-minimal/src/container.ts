@@ -1,9 +1,9 @@
 import { Container } from "@cloudflare/containers";
 
-export class RalphContainer extends Container {
+export class RalphContainer extends Container<{}> {
   defaultPort = 3000;
   
-  constructor(ctx: DurableObjectState, env: Env) {
+  constructor(ctx: DurableObjectState<{}>, env: {}) {
     super(ctx, env);
   }
   
@@ -11,8 +11,4 @@ export class RalphContainer extends Container {
     // Forward requests to the container's HTTP server
     return super.fetch(request);
   }
-}
-
-interface Env {
-  // Container environment
 }

@@ -2,10 +2,10 @@
 import { DurableObject } from "cloudflare:workers";
 import type { RalphContainer } from "./container";
 
-export class Ralph extends DurableObject {
+export class Ralph extends DurableObject<Env> {
   private id: string;
   
-  constructor(state: DurableObjectState, env: Env) {
+  constructor(state: DurableObjectState<Env>, env: Env) {
     super(state, env);
     this.id = state.id.toString();
   }
