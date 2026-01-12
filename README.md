@@ -1,6 +1,6 @@
 # Ralph - Ultra-Minimal Opencode Agent Runner
 
-**Run opencode agents indefinitely on Cloudflare. Deploy in 5 minutes. ~$15/month. 300 lines of code.**
+**Run opencode agents indefinitely on Cloudflare. Deploy in 5 minutes. ~$9-15/month. 300 lines of code.**
 
 [![Test](https://github.com/acoyfellow/ralph-complete/actions/workflows/test.yml/badge.svg)](https://github.com/acoyfellow/ralph-complete/actions/workflows/test.yml)
 [![Deploy](https://github.com/acoyfellow/ralph-complete/actions/workflows/deploy.yml/badge.svg)](https://github.com/acoyfellow/ralph-complete/actions/workflows/deploy.yml)
@@ -30,7 +30,7 @@ Ralph runs opencode indefinitely on your repos to make you money.
 - ✅ Remote terminal access (tmate)
 - ✅ Web UI + API
 - ✅ Mobile-friendly
-- ✅ ~$15/month when running 24/7
+- ✅ ~$9.50/month when running 24/7
 - ✅ Zero infrastructure to manage
 
 ## Example Usage
@@ -70,11 +70,11 @@ Your repo (dcainsights, etc)
 
 ## Cost
 
-- **Running 24/7:** ~$15/month
-- **Running 8hr/day:** ~$5/month  
-- **Only when working:** ~$1-2/month
+- **Running 24/7:** ~$9.50/month
+- **Running 8hr/day:** ~$6.50/month  
+- **Only when working:** ~$6/month + usage
 
-Container sleeps when idle. Pay per second.
+Includes Workers Paid plan ($5/mo base) + container resources. Container sleeps when idle.
 
 ## API
 
@@ -140,7 +140,7 @@ View test status: [Actions](https://github.com/acoyfellow/ralph-complete/actions
 4. **Zero infrastructure** - No servers, VMs, K8s
 5. **Actually deployable** - Works right now
 6. **Production-ready** - Handles failures, restarts
-7. **Cost-effective** - ~$5-20/month
+7. **Cost-effective** - ~$6-15/month
 8. **Remote access** - SSH from anywhere
 9. **Mobile-friendly** - Control from phone
 10. **Make money** - That's the whole point
