@@ -1,0 +1,41 @@
+{
+  "name": "ralph-complete",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-01-10",
+  "account_id": "bfcb6ac5b3ceaf42a09607f6f7925823",
+  
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "RALPH",
+        "class_name": "Ralph"
+      },
+      {
+        "name": "CONTAINER",
+        "class_name": "RalphContainer"
+      }
+    ]
+  },
+  
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_classes": [
+        "Ralph"
+      ]
+    },
+    {
+      "tag": "v2",
+      "new_sqlite_classes": [
+        "RalphContainer"
+      ]
+    }
+  ],
+  
+  "containers": [
+    {
+      "class_name": "RalphContainer",
+      "image": "./Dockerfile"
+    }
+  ]
+}
