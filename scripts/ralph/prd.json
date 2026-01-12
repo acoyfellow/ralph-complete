@@ -3,11 +3,10 @@
   "stories": [
     {
       "id": "S1",
-      "title": "Boot Ralph automation scaffold",
-      "status": "done",
+      "title": "Audit this codebase for truth (especially about cloudflare costs)",
+      "status": "pending",
       "acceptance": [
-        "It is verifiable by CI",
-        "It is small enough for one run"
+        "Prices are accurately projected for Cloudflare Costs (Workers, Durable Objects, Containers, etc)"
       ],
       "notes": "Keep stories tiny. 5–15 minutes of compute."
     }
