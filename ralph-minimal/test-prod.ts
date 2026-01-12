@@ -41,10 +41,10 @@ test.describe('Ralph Production Tests', () => {
           prompt: 'test prompt'
         }
       }),
-      new Promise((_, reject) => 
+      new Promise<never>((_, reject) => 
         setTimeout(() => reject(new Error('timeout')), 10000)
       )
-    ]).catch(() => null);
+    ]).catch(() => null as Awaited<ReturnType<typeof request.post>> | null);
     
     // If response exists, check status; if timeout, that's ok for smoke test
     if (response) {
@@ -75,10 +75,10 @@ test.describe('Ralph Production Tests', () => {
           command: 'test command'
         }
       }),
-      new Promise((_, reject) => 
+      new Promise<never>((_, reject) => 
         setTimeout(() => reject(new Error('timeout')), 10000)
       )
-    ]).catch(() => null);
+    ]).catch(() => null as Awaited<ReturnType<typeof request.post>> | null);
     
     // If response exists, check status; if timeout, that's ok for smoke test
     if (response) {
